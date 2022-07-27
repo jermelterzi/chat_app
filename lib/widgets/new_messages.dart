@@ -28,7 +28,7 @@ class _NewMessagesState extends State<NewMessages> {
       color: Theme.of(context).primaryColor,
       padding: const EdgeInsets.symmetric(
         vertical: 8.0,
-        horizontal: 4.0,
+        horizontal: 8.0,
       ),
       child: Row(
         children: [
