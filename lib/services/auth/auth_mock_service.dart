@@ -7,12 +7,20 @@ import 'dart:io';
 import 'package:chat/services/auth/auth_service.dart';
 
 class AuthMockService implements AuthService {
-  static Map<String, ChatUser> _users = {};
+  static final _defaultaUser = ChatUser(
+    id: '1',
+    name: 'Teste',
+    email: 'teste@afixcode.com.br',
+    imageUrl: 'assets/images/avatar.png',
+  );
+  static Map<String, ChatUser> _users = {
+    _defaultaUser.email: _defaultaUser,
+  };
   static ChatUser? _currentUser;
   static MultiStreamController<ChatUser?>? _controller;
   static final _userStream = Stream<ChatUser?>.multi((controller) {
     _controller = controller;
-    _updateUser(null);
+    _updateUser(_defaultaUser);
   });
 
   @override
