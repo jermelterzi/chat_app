@@ -25,4 +25,10 @@ flutter:
   uses-material-design: true
   
   assets:
-    - assets\images\avatar.png
+    - assets/images/avatar.png
+    - assets/images/no_message.jpg
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
