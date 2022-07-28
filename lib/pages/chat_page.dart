@@ -1,6 +1,9 @@
+import 'package:chat/pages/notification_page.dart';
+import 'package:chat/services/notification/chat_notification_service.dart';
 import 'package:chat/widgets/messages.dart';
 import 'package:chat/widgets/new_messages.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -12,11 +15,11 @@ class ChatPage extends StatelessWidget {
         title: const Text('Chat'),
         centerTitle: true,
         actions: [
-          DropdownButton(
-            items: [
-              DropdownMenuItem(
-                value: 'logout',
-                child: Container(
+          DropdownButtonHideUnderline(
+            child: DropdownButton(
+              items: [
+                DropdownMenuItem(
+                  value: 'logout',
                   child: Row(
                     children: const [
                       Icon(
@@ -30,13 +33,43 @@ class ChatPage extends StatelessWidget {
                     ],
                   ),
                 ),
+              ],
+              icon: Icon(
+                Icons.more_vert,
+                color: Theme.of(context).primaryIconTheme.color,
               ),
-            ],
-            icon: Icon(
-              Icons.more_vert,
-              color: Theme.of(context).primaryIconTheme.color,
+              onChanged: (value) {},
             ),
-            onChanged: (value) {},
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 4.0),
+            child: Stack(
+              children: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (ctx) => const NotificationPage()),
+                    );
+                  },
+                  icon: const Icon(Icons.notifications),
+                ),
+                Provider.of<ChatNotificationService>(context).itemsCount > 0
+                    ? Positioned(
+                        top: 7,
+                        right: 7,
+                        child: CircleAvatar(
+                          maxRadius: 8,
+                          backgroundColor: Colors.red.shade700,
+                          child: Text(
+                            '${Provider.of<ChatNotificationService>(context).itemsCount}',
+                            style: const TextStyle(fontSize: 8),
+                          ),
+                        ),
+                      )
+                    : Container(),
+              ],
+            ),
           ),
         ],
       ),
