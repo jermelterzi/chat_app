@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "817722515277",
+    "project_id": "chat-app-1cc15",
+    "storage_bucket": "chat-app-1cc15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817722515277:android:777d63ccbce2e2dc19a104",
+        "android_client_info": {
+          "package_name": "br.com.jemelterzi.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817722515277-p5o9sovmj4p002d4gkq88sv91i2haled.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgAE6OVqtXCncb3UbG_Kh4mf29dQKB4to"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817722515277-p5o9sovmj4p002d4gkq88sv91i2haled.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
