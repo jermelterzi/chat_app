@@ -1,4 +1,5 @@
 import 'package:chat/pages/notification_page.dart';
+import 'package:chat/services/auth/auth_service.dart';
 import 'package:chat/services/notification/chat_notification_service.dart';
 import 'package:chat/widgets/messages.dart';
 import 'package:chat/widgets/new_messages.dart';
@@ -38,7 +39,11 @@ class ChatPage extends StatelessWidget {
                 Icons.more_vert,
                 color: Theme.of(context).primaryIconTheme.color,
               ),
-              onChanged: (value) {},
+              onChanged: (value) {
+                if (value == 'logout') {
+                  AuthService().logout();
+                }
+              },
             ),
           ),
           Padding(
