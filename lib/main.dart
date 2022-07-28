@@ -1,5 +1,5 @@
 import 'package:chat/pages/splash_page.dart';
-import 'package:chat/services/notification/push_notification_service.dart';
+import 'package:chat/services/notification/chat_notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
